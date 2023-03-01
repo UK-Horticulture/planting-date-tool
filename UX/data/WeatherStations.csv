@@ -1,7 +1,76 @@
 LON,LAT,resource_t,org_name,address,contact_na,contact_ti,phone,email,optional_r
--83.71597,38.137246,Weather Station,Bath County Produce Auction,"2914 East Hwy 60, Owingsville, KY 40360",Dan Miller,Auction Manager,(606) 336-0103,http://www.uky.edu/ccd/pricereports/KYPA/bath,
--84.939888,37.194364,Weather Station,Casey County Produce Auction,"524 S Fork Creek Rd, Liberty, KY 42539",,,(606) 787-5158,http://www.uky.edu/ccd/pricereports/KYPA/casey,(606) 787-0570
--87.30877,36.84835,Weather Station,Fairview Produce Auction,"10292 US Hwy 68E, Pembroke, KY 42266",,,(270) 887-0053,http://www.uky.edu/ccd/pricereports/KYPA/fairview,(270) 712-8502
--85.972379,37.293561,Weather Station,Hart County Produce Auction,"6880 Cub Run Hwy, Munfordville, KY 42765",,,(270) 624-0005,http://www.uky.edu/ccd/pricereports/KYPA/hart,
--84.514334,37.502641,Weather Station,Lincoln County Produce Auction,"2896 KY Hwy 39 N, Crab Orchard, KY 40419",,,(606) 355-0030,http://www.uky.edu/ccd/pricereports/KYPA/lincoln,(606) 355-0001
--87.2231727,36.82653403,Weather Station,"Seasonal Pumpkin Auction  <p style=""color:red;"">Each Wednesday from 1st Wednesday in September to 2nd Wednesday in October Only</p>","205 Tress Shop Road, Elkton, KY 42220",Jonathan Hoover,Auctioneer,(270) 305-2807,https://hooversauctions.com/,
+-85.29454,37.1445,Weather Station,Adair County - CMBA Observation,Columbia 3 N,CMBA,Adair,848 ft.,http://www.kymesonet.org/live_data.html?site=CMBA&unittype=E&offset=0,none
+-86.21881,36.74426,Weather Station,Allen County - SCTV Observation,Scottsville 2 W,SCTV,Allen,818 ft.,http://www.kymesonet.org/live_data.html?site=SCTV&unittype=E&offset=0,none
+-88.9485,37.13263,Weather Station,Ballard County - BAND Observation,La Center 5 NNE,BAND,Ballard,357 ft.,http://www.kymesonet.org/live_data.html?site=BAND&unittype=E&offset=0,none
+-86.10588,37.01328,Weather Station,Barren County - MROK Observation,Glasgow 11 W,MROK,Barren,696 ft.,http://www.kymesonet.org/live_data.html?site=MROK&unittype=E&offset=0,none
+-83.76462,38.08892,Weather Station,Bath County - PRST Observation,Owingsville 4 S,PRST,Bath,829 ft.,http://www.kymesonet.org/live_data.html?site=PRST&unittype=E&offset=0,none
+-84.72165,38.96701,Weather Station,Boone County - HUEY Observation,Burlington 4 S,HUEY,Boone,896 ft.,http://www.kymesonet.org/live_data.html?site=HUEY&unittype=E&offset=0,none
+-84.82212,37.6235,Weather Station,Boyle County - DANV Observation,Danville 3 SW,DANV,Boyle,981 ft.,http://www.kymesonet.org/live_data.html?site=DANV&unittype=E&offset=0,none
+-83.15864,37.46072,Weather Station,Breathitt County - RFVC Observation,Jackson 14 ESE,RFVC,Breathitt,833 ft.,http://www.kymesonet.org/live_data.html?site=RFVC&unittype=E&offset=0,none
+-83.17972,37.4301,Weather Station,Breathitt County - RFSM Observation,Jackson 14 SE,RFSM,Breathitt,1373 ft.,http://www.kymesonet.org/live_data.html?site=RFSM&unittype=E&offset=0,none
+-86.46125,37.75927,Weather Station,Breckinridge County - HARD Observation,Hardinsburg 2 SSW,HARD,Breckinridge,643 ft.,http://www.kymesonet.org/live_data.html?site=HARD&unittype=E&offset=0,none
+-85.65755,37.92245,Weather Station,Bullitt County - CRMT Observation,Shepherdsville 6 SE,CRMT,Bullitt,546 ft.,http://www.kymesonet.org/live_data.html?site=CRMT&unittype=E&offset=0,none
+-86.64886,37.17535,Weather Station,Butler County - WDBY Observation,Morgantown 4 SSE,WDBY,Butler,421 ft.,http://www.kymesonet.org/live_data.html?site=WDBY&unittype=E&offset=0,none
+-87.86162,37.09534,Weather Station,Caldwell County - PRNC Observation,Princeton 2 SE,PRNC,Caldwell,509 ft.,http://www.kymesonet.org/live_data.html?site=PRNC&unittype=E&offset=0,none
+-88.33579,36.61261,Weather Station,Calloway County - MRRY Observation,Murray 1 W,MRRY,Calloway,568 ft.,http://www.kymesonet.org/live_data.html?site=MRRY&unittype=E&offset=0,none
+-84.47495,39.01997,Weather Station,Campbell County - HHTS Observation,Alexandria 5 NW,HHTS,Campbell,838 ft.,http://www.kymesonet.org/live_data.html?site=HHTS&unittype=E&offset=0,none
+-85.14227,38.68919,Weather Station,Carroll County - CRRL Observation,Carrollton 2 E,CRRL,Carroll,472 ft.,http://www.kymesonet.org/live_data.html?site=CRRL&unittype=E&offset=0,none
+-84.96408,37.28029,Weather Station,Casey County - PCWN Observation,Liberty 3 SW,PCWN,Casey,958 ft.,http://www.kymesonet.org/live_data.html?site=PCWN&unittype=E&offset=0,none
+-87.52138,36.94682,Weather Station,Christian County - PGHL Observation,Hopkinsville 6 N,PGHL,Christian,729 ft.,http://www.kymesonet.org/live_data.html?site=PGHL&unittype=E&offset=0,none
+-84.20518,38.03461,Weather Station,Clark County - WNCH Observation,Winchester 3 NW,WNCH,Clark,973 ft.,http://www.kymesonet.org/live_data.html?site=WNCH&unittype=E&offset=0,none
+-85.13822,36.71057,Weather Station,Clinton County - ALBN Observation,Albany 1 N,ALBN,Clinton,1020 ft.,http://www.kymesonet.org/live_data.html?site=ALBN&unittype=E&offset=0,none
+-88.03613,37.37774,Weather Station,Crittenden County - RPTN Observation,Marion 4 NE,RPTN,Crittenden,594 ft.,http://www.kymesonet.org/live_data.html?site=RPTN&unittype=E&offset=0,none
+-85.43101,36.80221,Weather Station,Cumberland County - GRDR Observation,Burkesville 3 W,GRDR,Cumberland,551 ft.,http://www.kymesonet.org/live_data.html?site=GRDR&unittype=E&offset=0,none
+-84.53354,37.97496,Weather Station,Fayette County - LXGN Observation,Lexington 7 S,LXGN,Fayette,1044 ft.,http://www.kymesonet.org/live_data.html?site=LXGN&unittype=E&offset=0,none
+-84.88206,38.11617,Weather Station,Franklin County - LSML Observation,Frankfort 7 S,LSML,Franklin,748 ft.,http://www.kymesonet.org/live_data.html?site=LSML&unittype=E&offset=0,none
+-89.15859,36.57108,Weather Station,Fulton County - HCKM Observation,Hickman 2 E,HCKM,Fulton,345 ft.,http://www.kymesonet.org/live_data.html?site=HCKM&unittype=E&offset=0,none
+-88.72388,36.69823,Weather Station,Graves County - PRYB Observation,Mayfield 6 SW,PRYB,Graves,434 ft.,http://www.kymesonet.org/live_data.html?site=PRYB&unittype=E&offset=0,none
+-86.34379,37.46262,Weather Station,Grayson County - BLRK Observation,Leitchfield 3 W,BLRK,Grayson,722 ft.,http://www.kymesonet.org/live_data.html?site=BLRK&unittype=E&offset=0,none
+-85.97877,37.67939,Weather Station,Hardin County - CCLA Observation,Elizabethtown 8 W,CCLA,Hardin,746 ft.,http://www.kymesonet.org/live_data.html?site=CCLA&unittype=E&offset=0,none
+-84.34534,38.49845,Weather Station,Harrison County - RBSN Observation,Cynthiana 8 N,RBSN,Harrison,657 ft.,http://www.kymesonet.org/live_data.html?site=RBSN&unittype=E&offset=0,none
+-85.77805,37.2606,Weather Station,Hart County - HDYV Observation,Munfordville 6 E,HDYV,Hart,716 ft.,http://www.kymesonet.org/live_data.html?site=HDYV&unittype=E&offset=0,none
+-87.50874,37.82107,Weather Station,Henderson County - GRHM Observation,Henderson 5 E,GRHM,Henderson,513 ft.,http://www.kymesonet.org/live_data.html?site=GRHM&unittype=E&offset=0,none
+-87.48109,37.26764,Weather Station,Hopkins County - ERLN Observation,Madisonville 4 S,ERLN,Hopkins,592 ft.,http://www.kymesonet.org/live_data.html?site=ERLN&unittype=E&offset=0,none
+-83.97128,37.35629,Weather Station,Jackson County - OLIN Observation,McKee 5 S,OLIN,Jackson,1319 ft.,http://www.kymesonet.org/live_data.html?site=OLIN&unittype=E&offset=0,none
+-82.8783,37.83058,Weather Station,Johnson County - BTCK Observation,Paintsville 4 W,BTCK,Johnson,755 ft.,http://www.kymesonet.org/live_data.html?site=BTCK&unittype=E&offset=0,none
+-82.99309,37.40718,Weather Station,Knott County - VEST Observation,Hindman 5 N,VEST,Knott,1556 ft.,http://www.kymesonet.org/live_data.html?site=VEST&unittype=E&offset=0,none
+-83.83302,36.87034,Weather Station,Knox County - BMBL Observation,Barbourville 3 E,BMBL,Knox,1016 ft.,http://www.kymesonet.org/live_data.html?site=BMBL&unittype=E&offset=0,none
+-85.7045,37.57281,Weather Station,LaRue County - HDGV Observation,Hodgenville 2 E,HDGV,LaRue,831 ft.,http://www.kymesonet.org/live_data.html?site=HDGV&unittype=E&offset=0,none
+-82.60342,38.09948,Weather Station,Lawrence County - LUSA Observation,Louisa 1 S,LUSA,Lawrence,716 ft.,http://www.kymesonet.org/live_data.html?site=LUSA&unittype=E&offset=0,none
+-82.84103,37.12514,Weather Station,Letcher County - WTBG Observation,Whitesburg 2 NW,WTBG,Letcher,1152 ft.,http://www.kymesonet.org/live_data.html?site=WTBG&unittype=E&offset=0,none
+-83.42322,38.58051,Weather Station,Lewis County - CHTR Observation,Vanceburg 6 W,CHTR,Lewis,546 ft.,http://www.kymesonet.org/live_data.html?site=CHTR&unittype=E&offset=0,none
+-84.62144,37.57996,Weather Station,Lincoln County - LGNT Observation,Stanford 4 NE,LGNT,Lincoln,977 ft.,http://www.kymesonet.org/live_data.html?site=LGNT&unittype=E&offset=0,none
+-86.91544,36.85296,Weather Station,Logan County - RSVL Observation,Russellville 2 W,RSVL,Logan,660 ft.,http://www.kymesonet.org/live_data.html?site=RSVL&unittype=E&offset=0,none
+-85.37044,37.62604,Weather Station,Marion County - LRTO Observation,Lebanon 8 NW,LRTO,Marion,764 ft.,http://www.kymesonet.org/live_data.html?site=LRTO&unittype=E&offset=0,none
+-88.33621,36.91611,Weather Station,Marshall County - DRFN Observation,Benton 4 N,DRFN,Marshall,469 ft.,http://www.kymesonet.org/live_data.html?site=DRFN&unittype=E&offset=0,none
+-83.80754,38.62369,Weather Station,Mason County - WSHT Observation,Maysville 3 SW,WSHT,Mason,909 ft.,http://www.kymesonet.org/live_data.html?site=WSHT&unittype=E&offset=0,none
+-84.47668,36.77062,Weather Station,McCreary County - FLRK Observation,Whitley City 3 N,FLRK,McCreary,1312 ft.,http://www.kymesonet.org/live_data.html?site=FLRK&unittype=E&offset=0,none
+-87.31713,37.58527,Weather Station,McLean County - PVRT Observation,Calhoun 5 NW,PVRT,McLean,404 ft.,http://www.kymesonet.org/live_data.html?site=PVRT&unittype=E&offset=0,none
+-86.22353,37.95147,Weather Station,Meade County - BRND Observation,Brandenburg 4 SW,BRND,Meade,603 ft.,http://www.kymesonet.org/live_data.html?site=BRND&unittype=E&offset=0,none
+-83.64786,37.86619,Weather Station,Menifee County - DCRD Observation,Frenchburg 6 SSW,DCRD,Menifee,1253 ft.,http://www.kymesonet.org/live_data.html?site=DCRD&unittype=E&offset=0,none
+-84.83987,37.80583,Weather Station,Mercer County - HRDB Observation,Harrodsburg 3 N,HRDB,Mercer,896 ft.,http://www.kymesonet.org/live_data.html?site=HRDB&unittype=E&offset=0,none
+-85.70415,36.98902,Weather Station,Metcalfe County - RNDH Observation,Edmonton 5 W,RNDH,Metcalfe,1002 ft.,http://www.kymesonet.org/live_data.html?site=RNDH&unittype=E&offset=0,none
+-85.79668,36.66154,Weather Station,Monroe County - GAMA Observation,Tompkinsville 7 SW,GAMA,Monroe,842 ft.,http://www.kymesonet.org/live_data.html?site=GAMA&unittype=E&offset=0,none
+-83.2695,37.9007,Weather Station,Morgan County - WLBT Observation,West Liberty 2 SW,WLBT,Morgan,1071 ft.,http://www.kymesonet.org/live_data.html?site=WLBT&unittype=E&offset=0,none
+-87.16084,37.28792,Weather Station,Muhlenberg County - CCTY Observation,Greenville 6 N,CCTY,Muhlenberg,522 ft.,http://www.kymesonet.org/live_data.html?site=CCTY&unittype=E&offset=0,none
+-84.03856,38.32092,Weather Station,Nicholas County - CARL Observation,Carlisle 1 NW,CARL,Nicholas,930 ft.,http://www.kymesonet.org/live_data.html?site=CARL&unittype=E&offset=0,none
+-86.85513,37.45732,Weather Station,Ohio County - HTFD Observation,Hartford 3 E,HTFD,Ohio,538 ft.,http://www.kymesonet.org/live_data.html?site=HTFD&unittype=E&offset=0,none
+-85.47337,38.46417,Weather Station,Oldham County - LGRN Observation,La Grange 6 NW,LGRN,Oldham,766 ft.,http://www.kymesonet.org/live_data.html?site=LGRN&unittype=E&offset=0,none
+-84.74443,38.55099,Weather Station,Owen County - SWON Observation,Owenton 5 E,SWON,Owen,870 ft.,http://www.kymesonet.org/live_data.html?site=SWON&unittype=E&offset=0,none
+-83.68576,37.45196,Weather Station,Owsley County - BNVL Observation,Booneville 2 S,BNVL,Owsley,784 ft.,http://www.kymesonet.org/live_data.html?site=BNVL&unittype=E&offset=0,none
+-82.52458,37.2848,Weather Station,Pike County - DORT Observation,Pikeville 13 S,DORT,Pike,2774 ft.,http://www.kymesonet.org/live_data.html?site=DORT&unittype=E&offset=0,none
+-84.55867,37.17853,Weather Station,Pulaski County - DABN Observation,Somerset 7 NNE,DABN,Pulaski,1085 ft.,http://www.kymesonet.org/live_data.html?site=DABN&unittype=E&offset=0,none
+-83.47736,38.21914,Weather Station,Rowan County - MRHD Observation,Morehead 4 NE,MRHD,Rowan,851 ft.,http://www.kymesonet.org/live_data.html?site=MRHD&unittype=E&offset=0,none
+-84.96609,36.99315,Weather Station,Russell County - WOOD Observation,Jamestown 5 E,WOOD,Russell,988 ft.,http://www.kymesonet.org/live_data.html?site=WOOD&unittype=E&offset=0,none
+-85.38443,38.16398,Weather Station,Shelby County - FCHV Observation,Shelbyville 10 W,FCHV,Shelby,770 ft.,http://www.kymesonet.org/live_data.html?site=FCHV&unittype=E&offset=0,none
+-85.16864,38.33022,Weather Station,Shelby County - CROP Observation,Shelbyville 9 NNE,CROP,Shelby,844 ft.,http://www.kymesonet.org/live_data.html?site=CROP&unittype=E&offset=0,none
+-85.13898,38.09216,Weather Station,Shelby County - WADD Observation,Shelbyville 10 SSE,WADD,Shelby,838 ft.,http://www.kymesonet.org/live_data.html?site=WADD&unittype=E&offset=0,none
+-86.61416,36.6733,Weather Station,Simpson County - SWZR Observation,Franklin 4 SW,SWZR,Simpson,740 ft.,http://www.kymesonet.org/live_data.html?site=SWZR&unittype=E&offset=0,none
+-85.45884,37.35652,Weather Station,Taylor County - BNGL Observation,Campbellsville 7 W,BNGL,Taylor,785 ft.,http://www.kymesonet.org/live_data.html?site=BNGL&unittype=E&offset=0,none
+-87.21381,36.75871,Weather Station,Todd County - ZION Observation,Elkton 5 SW,ZION,Todd,593 ft.,http://www.kymesonet.org/live_data.html?site=ZION&unittype=E&offset=0,none
+-87.86036,36.82746,Weather Station,Trigg County - CADZ Observation,Cadiz 4 SW,CADZ,Trigg,505 ft.,http://www.kymesonet.org/live_data.html?site=CADZ&unittype=E&offset=0,none
+-87.84446,37.69185,Weather Station,Union County - FRNY Observation,Morganfield 4 E,FRNY,Union,440 ft.,http://www.kymesonet.org/live_data.html?site=FRNY&unittype=E&offset=0,none
+-86.3478,37.03825,Weather Station,Warren County - EWPK Observation,Bowling Green 6 NE,EWPK,Warren,538 ft.,http://www.kymesonet.org/live_data.html?site=EWPK&unittype=E&offset=0,none
+-86.46519,36.92669,Weather Station,Warren County - FARM Observation,Bowling Green 5 S,FARM,Warren,559 ft.,http://www.kymesonet.org/live_data.html?site=FARM&unittype=E&offset=0,none
+-84.9028,36.87188,Weather Station,Wayne County - MONT Observation,Monticello 4 NW,MONT,Wayne,1045 ft.,http://www.kymesonet.org/live_data.html?site=MONT&unittype=E&offset=0,none
+-87.69352,37.52337,Weather Station,Webster County - DIXO Observation,Dixon 1 NW,DIXO,Webster,479 ft.,http://www.kymesonet.org/live_data.html?site=DIXO&unittype=E&offset=0,none

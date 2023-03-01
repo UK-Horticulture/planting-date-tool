@@ -21,8 +21,7 @@
   <style>
   #map {
     background: #448ee4;
-    width: 50%;
-    height: 50%;
+    width: 100%;
   }
   #title {
     position: absolute;
@@ -337,9 +336,9 @@
             onEachFeature : function(feature,layer) {
               var props = feature.properties;
               var locationPopup =
-                "<h2>" + props.resource_t + "</h2><br><b>" + props.org_name + "</b>" +
-                "<p>" + props.address + "<br><br><b>Contact Information:  <br></b>" + props.contact_na + "<br>" +
-                props.contact_ti + "<br>" + props.phone + "<br>" + props.optional_r + "<br><a href='" + props.email + "'>Auction Schedule and Price Reports</a></p></p>";
+                "<b>KY Mesonet Station<br>" + props.org_name + "</b>" + "<br>Network Site Name:  " + props.address +
+                "<br></b>Station ID:  " + props.contact_na + "<br><a href='" + props.email + "'>Station Website</a><br><br>Elevation:  " + props.phone +
+                "</p></p>";
                 layer.bindPopup(locationPopup)
             }
         }).addTo(map);
