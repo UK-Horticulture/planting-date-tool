@@ -60,15 +60,14 @@
       </div>
 
       <div class="jumbotron">
-        <h2>Modeled Planting Window</h2>
         <p class="lead">
              <figure class="highcharts-figure">
                   <div id="container"></div>
-                  <p class="highcharts-description">
-                       This chart shows a modeled growth of selected plant based on historic growing degree days.
+                  <p class="highcharts-description" style="font-size:14px; ">
+                       This chart shows a modeled growth of selected plant based on historic growing degree days and recommended maturity (<img src="./UX/icons/maturity-icon.png">) at harvest.
                  </p>
            </figure>
-      <p><a class="btn btn-lg btn-success" href="#" role="button">Recalculate</a></p>
+      <p><a class="btn btn-lg btn-success" href="#" role="button">Calculate</a></p>
       </div>
 
       <div class="row marketing">
@@ -125,6 +124,11 @@
 
 <script>
      // Data retrieved https://en.wikipedia.org/wiki/List_of_cities_by_average_temperature
+
+Highcharts.setOptions({
+   colors: ['#50B432', '#ED561B', '#DDDF00', '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4']
+});
+
 Highcharts.chart('container', {
   chart: {
     type: 'spline'
@@ -134,14 +138,14 @@ Highcharts.chart('container', {
   },
   subtitle: {
     text: 'Source: ' +
-      '<a href="https://en.wikipedia.org/wiki/List_of_cities_by_average_temperature" ' +
-      'target="_blank">[Historic Station Name]</a>'
+      '<a href="http://www.kymesonet.org/monthly_summaries.html?county=LXGN" ' +
+      'target="_blank">KY Mesonet - Lexington 7 S [LXGN]</a>'
   },
   xAxis: {
-    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-      'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    categories: ['March 1', 'March 15', 'April 1', 'April 15', 'May 1', 'May 15',
+      'June 1', 'June 15', 'July 1', 'July 15'],
     accessibility: {
-      description: 'Months of the year'
+      description: 'Date'
     }
   },
   yAxis: {
@@ -168,34 +172,20 @@ Highcharts.chart('container', {
     }
   },
   series: [{
-    name: 'Tokyo',
+    name: 'Spinach, Space',
     marker: {
-      symbol: 'square'
+      symbol: 'circle'
     },
-    data: [5.2, 5.7, 8.7, 13.9, 18.2, 21.4, 25.0, {
-      y: 26.4,
+    data: [0, 0, 1, 1, 2, 3, 4, {
+      y: 5,
       marker: {
-        symbol: 'url(https://www.highcharts.com/samples/graphics/sun.png)'
+        symbol: 'url(./UX/icons/maturity-icon.png)'
       },
       accessibility: {
         description: 'Sunny symbol, this is the warmest point in the chart.'
       }
-    }, 22.8, 17.5, 12.1, 7.6]
+    }, 6]
 
-  }, {
-    name: 'Bergen',
-    marker: {
-      symbol: 'diamond'
-    },
-    data: [{
-      y: 1.5,
-      marker: {
-        symbol: 'url(https://www.highcharts.com/samples/graphics/snow.png)'
-      },
-      accessibility: {
-        description: 'Snowy symbol, this is the coldest point in the chart.'
-      }
-    }, 1.6, 3.3, 5.9, 10.5, 13.5, 14.5, 14.4, 11.5, 8.7, 4.7, 2.6]
   }]
 });
 </script>
