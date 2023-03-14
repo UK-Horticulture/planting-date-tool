@@ -37,7 +37,8 @@
 
     <!-- Highcharts Library -->
     <script src="https://code.highcharts.com/highcharts.js"></script>
-    <script src="https://code.highcharts.com/modules/series-label.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/dumbbell.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
@@ -57,7 +58,51 @@
           </ul>
         </nav>
         <h3 class="text-muted">Planty McPlantface v0.04a</h3>
+
+        <div class="row marketing">
+          <div class="col-lg-6">
+            <h4><b>What</b> are you planting?</h4>
+            <p>
+                 <form name="myform" id="myForm">
+                     <select name="optone" id="cropSel" size="1">
+                         <option value="" selected="selected">Select Crop</option>
+                     </select>
+                     <br>
+                     <select name="opttwo" id="cultivarSel" size="1">
+                         <option value="" selected="selected">Please select crop first</option>
+                     </select>
+                     <br>
+                     <br>
+
+                     <h4><b>When</b> are you planting?</h4>
+                     <select name="optthree" id="seasonSel" size="1">
+                         <option value="" selected="selected">Please select cultivar first</option>
+                     </select>
+                 </form>
+
+            <h4>When do you want to harvest?</h4>
+            <p>First Day of Harvest &nbsp;<input type="date" id="Hdate1"></p>
+            <p>Last Day of Harvest &nbsp;<input type="date" id="Hdate2"></p>
+
+            <h4><b>Where</b> are you growing?</h4>
+            <p>[Modal Popup with Map of Stations, select]</p>
+          </div>
+
+          <div class="col-lg-6">
+            <h4>Subheading</h4>
+            <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
+
+            <h4>Subheading</h4>
+            <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
+
+            <h4>Subheading</h4>
+            <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+          </div>
+
+
       </div>
+
+
 
       <div class="jumbotron">
         <p class="lead">
@@ -70,47 +115,7 @@
       <p><a class="btn btn-lg btn-success" href="#" role="button">Calculate</a></p>
       </div>
 
-      <div class="row marketing">
-        <div class="col-lg-6">
-          <h4>What are you harvesting?</h4>
-          <p>
-               <form name="myform" id="myForm">
-                   <select name="optone" id="cropSel" size="1">
-                       <option value="" selected="selected">Select Crop</option>
-                   </select>
-                   <br>
-                   <br>
-                   <select name="opttwo" id="cultivarSel" size="1">
-                       <option value="" selected="selected">Please select crop first</option>
-                   </select>
-                   <br>
-                   <br>
 
-                   <h4>Which season?</h4>
-                   <select name="optthree" id="seasonSel" size="1">
-                       <option value="" selected="selected">Please select cultivar first</option>
-                   </select>
-               </form>
-
-
-          <h4>When do you want to harvest?</h4>
-          <p>[Dropdown First Harvest Date]</p>
-          <p>[Dropdown Last Harvest Date]</p>
-
-          <h4>Growing Location</h4>
-          <p>[Modal Popup with Map of Stations, select]</p>
-        </div>
-
-        <div class="col-lg-6">
-          <h4>Subheading</h4>
-          <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-
-          <h4>Subheading</h4>
-          <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-
-          <h4>Subheading</h4>
-          <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-        </div>
       </div>
 
       <footer class="footer">
@@ -125,69 +130,59 @@
 <script>
      // Data retrieved https://en.wikipedia.org/wiki/List_of_cities_by_average_temperature
 
-Highcharts.setOptions({
-   colors: ['#50B432', '#ED561B', '#DDDF00', '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4']
-});
+     var data = [{
+         name: 'First Harvest',
+         low: 70.1,
+         high: 81.3
+     }, {
+         name: 'Last Harvest',
+         low: 73.2,
+         high: 84.0
+     }];
 
-Highcharts.chart('container', {
-  chart: {
-    type: 'spline'
-  },
-  title: {
-    text: 'Modeled Plant Growth'
-  },
-  subtitle: {
-    text: 'Source: ' +
-      '<a href="http://www.kymesonet.org/monthly_summaries.html?county=LXGN" ' +
-      'target="_blank">KY Mesonet - Lexington 7 S [LXGN]</a>'
-  },
-  xAxis: {
-    categories: ['March 1', 'March 15', 'April 1', 'April 15', 'May 1', 'May 15',
-      'June 1', 'June 15', 'July 1', 'July 15'],
-    accessibility: {
-      description: 'Date'
-    }
-  },
-  yAxis: {
-    title: {
-      text: 'Maturity'
-    },
-    labels: {
-      formatter: function () {
-        return this.value + ' leaves';
-      }
-    }
-  },
-  tooltip: {
-    crosshairs: true,
-    shared: true
-  },
-  plotOptions: {
-    spline: {
-      marker: {
-        radius: 4,
-        lineColor: '#666666',
-        lineWidth: 1
-      }
-    }
-  },
-  series: [{
-    name: 'Spinach, Space',
-    marker: {
-      symbol: 'circle'
-    },
-    data: [0, 0, 1, 1, 2, 3, 4, {
-      y: 5,
-      marker: {
-        symbol: 'url(./UX/icons/maturity-icon.png)'
-      },
-      accessibility: {
-        description: 'Sunny symbol, this is the warmest point in the chart.'
-      }
-    }, 6]
+     Highcharts.chart('container', {
 
-  }]
-});
+         chart: {
+             type: 'dumbbell',
+             inverted: true
+         },
+
+         legend: {
+             enabled: false
+         },
+
+         subtitle: {
+             text: '1970 vs 2021 Source: ' +
+                 '<a href="https://ec.europa.eu/eurostat/en/web/main/data/database"' +
+                 'target="_blank">Eurostat</a>'
+         },
+
+         title: {
+             text: 'Change in Life Expectancy'
+         },
+
+         tooltip: {
+             shared: true
+         },
+
+         xAxis: {
+             type: 'category'
+         },
+
+         yAxis: {
+             title: {
+                 text: 'Life Expectancy (years)'
+             }
+         },
+
+         series: [{
+             name: 'Life expectancy change',
+             data: data
+         }]
+
+     });
+
+
 </script>
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
