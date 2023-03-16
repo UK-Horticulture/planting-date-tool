@@ -17,8 +17,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 
     <!-- Optional theme -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
-
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous"> -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
 
@@ -43,6 +43,7 @@
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
     <script src="output.js"></script>
+
 
   </head>
 
@@ -108,18 +109,18 @@
         <p class="lead">
              <figure class="highcharts-figure">
                   <div id="container"></div>
-                  <p class="highcharts-description" style="font-size:14px; ">
+                  <!-- <p class="highcharts-description" style="font-size:14px; ">
                        This chart shows a modeled growth of selected plant based on historic growing degree days and recommended maturity (<img src="./UX/icons/maturity-icon.png">) at harvest.
-                 </p>
+                 </p> -->
            </figure>
-      <p><a class="btn btn-lg btn-success" href="#" role="button">Calculate</a></p>
+      <p><a class="btn btn-lg btn-success" href="#" role="button" onClick="window.location.reload();">Calculate</a></p>
       </div>
 
 
       </div>
 
       <footer class="footer">
-        <p>&copy; 2016 Company, Inc.</p>
+        <p>GNU Public License v3</p>
       </footer>
 
     </div> <!-- /container -->
@@ -128,23 +129,50 @@
 
 
 <script>
-     // Data retrieved https://en.wikipedia.org/wiki/List_of_cities_by_average_temperature
+
+     var  locale = 'en-US',
+          options = {
+               month: 'long',
+               day: 'numeric',
+               year: 'numeric',
+          }
+
+          //pull dates from calendar picker
+     var  HarvestDate1 = new Date(document.getElementById("Hdate1").valueAsDate.getTime()),
+          HarvestDate2 = new Date(document.getElementById("Hdate2").valueAsDate.getTime()),
+
+          //conversion from Days to Milliseconds
+          DaysToMS = 86400000,
+
+          //placeholder data for modeled number of days to maturity
+          ModelGrowth1 = 55,
+          ModelGrowth2 = 50,
+
+          //back calculate planting days
+          PlantDate1 = HarvestDate1 - ModelGrowth1 * DaysToMS,
+          PlantDate2 = HarvestDate2 - ModelGrowth2 * DaysToMS
+
 
      var data = [{
-         name: 'First Harvest',
-         low: 70.1,
-         high: 81.3
+         name: 'First Planting',
+         low: PlantDate1,
+         high: HarvestDate1.getTime()
      }, {
-         name: 'Last Harvest',
-         low: 73.2,
-         high: 84.0
+         name: 'Last Planting',
+         low: PlantDate2,
+         high: HarvestDate2.getTime()
      }];
+
+     Highcharts.setOptions({
+         colors: ['#097969', '#AFE1AF', '#50C878', '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4']
+     });
 
      Highcharts.chart('container', {
 
          chart: {
              type: 'dumbbell',
-             inverted: true
+             inverted: true,
+             styledMode: false
          },
 
          legend: {
@@ -152,17 +180,13 @@
          },
 
          subtitle: {
-             text: '1970 vs 2021 Source: ' +
+             text: 'modeled with 10 year data from ' +
                  '<a href="https://ec.europa.eu/eurostat/en/web/main/data/database"' +
-                 'target="_blank">Eurostat</a>'
+                 'target="_blank">[KY Mesonet Station Name]</a>'
          },
 
          title: {
-             text: 'Change in Life Expectancy'
-         },
-
-         tooltip: {
-             shared: true
+             text: 'Planting and Harvest Interval'
          },
 
          xAxis: {
@@ -170,15 +194,28 @@
          },
 
          yAxis: {
+             type: 'datetime',
+             labels: {
+               formatter: function() {
+                 return Highcharts.dateFormat('%B %e', this.value)
+               }
+             },
              title: {
-                 text: 'Life Expectancy (years)'
+                 text: 'Day of Year'
+
              }
          },
 
          series: [{
-             name: 'Life expectancy change',
-             data: data
+             name: 'Planting and Harvest Interval',
+             data: data,
+             connectorWidth: 5,
+             lowColor: '#824900',
+             marker: {
+                 radius: 10
+             }
          }]
+
 
      });
 
