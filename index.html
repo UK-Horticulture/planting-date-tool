@@ -186,7 +186,14 @@
          },
 
          title: {
-             text: 'Planting and Harvest Interval'
+              text: 'Planting and Harvest Interval'
+         },
+
+         tooltip: {
+             formatter:function(){
+                  console.log(this)
+                  return '<b>' + this.point.name + ': </b><br> Plant:  <b>' + Highcharts.dateFormat('%B %d', this.point.options.low) + '</b><br/>' + 'Harvest: <b>'+ Highcharts.dateFormat('%B %d', this.point.options.high) + '</b><br/>';
+             }
          },
 
          xAxis: {
