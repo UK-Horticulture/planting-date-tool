@@ -36,79 +36,6 @@
     font-size: 1.6em;
   }
 
-  /* modal test */
-
-  #myModal {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  color: #444;
-  cursor: help;
-  text-align: left;
-  outline: none;
-  border-radius: 5px;
-  font-size: 15px;
-  z-index: 800;
-  }
-
-  #myBtn {
-  position: absolute;
-  top: 80px;
-  left: 12px;
-  width: 40px;
-  height: 40px;
-  background-size: 40px 40px;
-  color: #444;
-  cursor: help;
-  text-align: left;
-  outline: none;
-  border-radius: 5px;
-  font-size: 15px;
-  z-index: 850;
-  }
-
-  .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: #005d7e; /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-
-  /* Modal Content */
-  .modal-content {
-    background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
-    font-size: 12px;
-    line-height: 15px;
-    border: 1px solid #005d7e;
-    border-radius: 5px;
-    width: 80%;
-    max-width: 640px;
-  }
-
-  /* The Close Button */
-  .close {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-
-  .close:hover,
-  .close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-  }
-
   /* Style the collapsible content. Note: hidden by default */
   .content {
     position: absolute;
@@ -175,25 +102,7 @@
 
 <body>
 
-  <section id="title">
-    <b>Select Your Weather Station</b>
-  </section>
-
   <div id="map" class='viewport-full viewport-full-ml'></div>
-
-  <!-- Trigger/Open The Modal -->
-  <button id="myBtn"><img src="info.png" height="40" width="40"></button>
-
-  <!-- Main Info Modal -->
-  <div id="myModal" class="modal">
-
-    <!-- Modal content -->
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <p><h2>About This Map</h2><br>
-        Instruction info...
-    </div>
-  </div>
 
   <!-- load leaflet, omnivore, and mapapp script -->
 
@@ -368,28 +277,6 @@
     var sourcesLabels = {
       "<img src='icons/weather.png' height='34' width='35'><b>&nbsp;Weather Station</b>": geoJsonLayers.weatherLayer,
     };
-
-    // info modal code
-    var modal = document.getElementById('myModal');
-    // Get the button that opens the modal
-    var btn = document.getElementById("myBtn");
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
-    // When the user clicks the button, open the modal
-    btn.onclick = function() {
-        modal.style.display = "block";
-    }
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function() {
-        modal.style.display = "none";
-    }
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-
 
     // filtering functions for creating multiple layers from single geojson
     function weatherFilter(feature) {
