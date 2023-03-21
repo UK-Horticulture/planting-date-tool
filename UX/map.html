@@ -247,7 +247,7 @@
               var locationPopup =
                 "<b>KY Mesonet Station<br>" + props.org_name + "</b>" + "<br>Network Site Name:  " + props.address +
                 "<br></b>Station ID:  " + props.contact_na + "<br><a href='" + props.email + "'>Station Website</a><br><br>Elevation:  " + props.phone +
-                "</p></p>";
+                "<br><select id='select_name'><option value='" + props.contact_na + "'>" + props.contact_na + "</option></select><input type='button' name='save' value='Set Station'></p>";
                 layer.bindPopup(locationPopup)
             }
         }).addTo(map);
