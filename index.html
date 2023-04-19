@@ -70,6 +70,10 @@
     font-size: 15px;
     }
 
+    .body {
+     font-size: 20px;
+    }
+
     .modal {
       display: none; /* Hidden by default */
       position: fixed; /* Stay in place */
@@ -129,6 +133,27 @@
 
   <body>
 
+       <script type="text/javascript">
+       	var eventMethod = window.addEventListener
+       			? "addEventListener"
+       			: "attachEvent";
+       	var eventer = window[eventMethod];
+       	var messageEvent = eventMethod === "attachEvent"
+       		? "onmessage"
+       		: "message";
+
+       	eventer(messageEvent, function (e) {
+
+       		// if (e.origin !== 'http://the-trusted-iframe-origin.com') return;
+
+       		if (e.data === "myevent" || e.message === "myevent")
+       			alert('Message from iframe just came!');
+
+       		console.log(e);
+       	});
+       </script>
+
+
     <!-- Main Info Modal -->
     <div id="myModal" class="modal">
       <!-- Modal content -->
@@ -142,16 +167,16 @@
       <div class="header clearfix">
         <nav>
           <ul class="nav nav-pills pull-right">
-            <li role="presentation" class="active"><a href="#">Home</a></li>
+            <li role="presentation" class="active"><a href="#" onClick="window.location.reload();">Reload Page</a></li>
             <li role="presentation"><a href="#">About</a></li>
             <li role="presentation"><a href="#">Contact</a></li>
           </ul>
         </nav>
-        <h3 class="text-muted">Planty McPlantface v0.04a</h3>
+        <h3 class="text-muted">LeafTime v0.10a</h3>
 
         <div class="row marketing">
           <div class="col-lg-6">
-            <h4><b>What</b> are you planting?</h4>
+            <h4><b><u>What</u></b> are you planting?</h4>
             <p>
                  <form name="myform" id="myForm">
                      <select name="optone" id="cropSel" size="1">
@@ -164,7 +189,7 @@
                      <br>
                      <br>
 
-                     <h4><b>When</b> are you planting?</h4>
+                     <h4><u><b>When</b></u> are you planting?</h4>
                      <select name="optthree" id="seasonSel" size="1">
                          <option value="" selected="selected">Please select crop & cultivar first</option>
                      </select>
@@ -175,18 +200,18 @@
                 min="2023-05-01"
                 max="2023-07-15">
             <br>Last Day of Harvest &nbsp;<input type="date" id="Hdate2"
-            value="2023-05-01"
-            min="2023-05-01"
+            value="2023-05-15"
+            min="2023-05-15"
             max="2023-07-15">
           </p>
           </div>
 
           <div class="col-lg-6">
-            <h4><b>Where</b> are you growing?</h4>
+            <h4><u><b>Where</b></u> are you planting?</h4>
             <p><button id="myBtn"><img src="geoicon.ico" height="40" width="40"></button>&nbsp;&nbsp; Click to Choose Weather Station
             <input type='button' name='save' value='SAVE'></p>
 
-            <h4><b>How</b> are you growing?</h4>
+            <h4><u><b>How</b></u> are you growing?</h4>
             <p>
               <select name="prodSys" id="systems">
                 <option value="field">Field</option>
@@ -194,9 +219,12 @@
                 <option value="GH">Greenhouse</option> -->
               </select> </p>
           </div>
-      </div>
 
-      <div class="jumbotron">
+     </div>
+
+     <p><center><a class="btn btn-lg btn-success" href="#" role="button" onClick="javascript:showDiv();">Show Interval</a></center></p>
+
+     <div class="jumbotron" id="tow">
         <p class="lead">
              <figure class="highcharts-figure">
                   <div id="container"></div>
@@ -204,8 +232,14 @@
                        This chart shows a modeled growth of selected plant based on historic growing degree days and recommended maturity (<img src="./UX/icons/maturity-icon.png">) at harvest.
                  </p> -->
            </figure>
-      <p><a class="btn btn-lg btn-success" href="#" role="button" onClick="window.location.reload();">Calculate</a></p>
       </div>
+
+      <script type="text/javascript">
+         function showDiv() {
+             div = document.getElementById('tow');
+             div.style.display = "block";
+         }
+     </script>
 
 
       </div>
@@ -215,6 +249,7 @@
       </footer>
 
     </div> <!-- /container -->
+
 
 
 
@@ -234,7 +269,7 @@
           //conversion from Days to Milliseconds
           DaysToMS = 86400000,
 
-          //placeholder data for modeled number of days to maturity
+          //FAKE PLACE HOLDER DATA for modeled number of days to maturity
           ModelGrowth1 = 55,
           ModelGrowth2 = 50,
 
@@ -243,12 +278,12 @@
           PlantDate2 = HarvestDate2 - ModelGrowth2 * DaysToMS
 
      var data = [{
-         name: 'First Planting',
+         name: 'First Succession',
          low: PlantDate1,
-         high: PlantDate2
+         high: HarvestDate1.getTime()
      }, {
-         name: 'Last Planting',
-         low: HarvestDate1.getTime(),
+         name: 'Last Succession',
+         low: PlantDate2,
          high: HarvestDate2.getTime()
      }];
 
@@ -262,14 +297,6 @@
      //     high: HarvestDate2.getTime()
      // }];
 
-     // pull weather station ID
-     $('input:button[name=save]').click(function() {
-         var name = $('iframe[name=select_frame]').contents().find('#select_name').val();
-         console.log(name);
-     });
-
-     console.log(name);
-
      Highcharts.setOptions({
           symbols:["circle","square","diamond","circle"],
           colors: ['#097969', '#AFE1AF', '#50C878', '#24CBE5', '#64E572', '#FF9655', '#FFF263', '#6AF9C4']
@@ -279,33 +306,49 @@
 
          chart: {
              type: 'dumbbell',
-             inverted: false,
+             inverted: true,
              styledMode: false
          },
 
          legend: {
-             enabled: false
+             enabled: false,
+               itemStyle: {
+                  color: '#000000',
+                  fontWeight: 'bold',
+                  fontSize: '20px'
+             }
          },
 
          subtitle: {
-             text: 'modeled with 10 year data from ' +
+             text: 'Modeled with 10 year data from ' +
                  '<a href="https://ec.europa.eu/eurostat/en/web/main/data/database"' +
-                 'target="_blank">' + name + '</a>'
+                 'target="_blank">[MESONET STATION ID]</a>'
          },
 
          title: {
-              text: 'Planting and Harvest Interval'
+              text: 'Planting and Harvest Interval',
+              style: {
+                   fontSize: '25px'
+               }
          },
 
          tooltip: {
              formatter:function(){
                   console.log(this)
-                  return '<b>' + this.point.name + ': </b><br> Plant:  <b>' + Highcharts.dateFormat('%B %d', this.point.options.low) + '</b><br/>' + 'Harvest: <b>'+ Highcharts.dateFormat('%B %d', this.point.options.high) + '</b><br/>';
-             }
+                  return '<b>' + this.point.name + '</b><br><br> Plant on <b><u>' + Highcharts.dateFormat('%B %e', this.point.options.low) + '</u></b>' + ' to harvest on <b><u>'+ Highcharts.dateFormat('%B %e', this.point.options.high) + '</u></b><br/>';
+             },
+             style: {
+                  fontSize: '20px'
+               }
          },
 
          xAxis: {
-             type: 'category'
+             type: 'category',
+             labels: {
+                  style: {
+                       fontSize:'20px'
+                  }
+             }
          },
 
          yAxis: {
@@ -313,21 +356,26 @@
              labels: {
                formatter: function() {
                  return Highcharts.dateFormat('%B %e', this.value)
+               },
+               style: {
+                    fontSize:'20px'
                }
              },
              title: {
-                 text: 'Day of Year'
-
-             }
+                 text: 'Day of Year',
+                 style: {
+                      fontSize:'20px'
+                 }
+            }
          },
 
          series: [{
              name: 'Planting and Harvest Interval',
              data: data,
-             connectorWidth: 8,
+             connectorWidth: 14,
              lowColor: '#ff9933',
              marker: {
-                radius: 8
+                radius: 14
              }
          }]
 
